@@ -38,10 +38,14 @@ buttonPlay.addEventListener("click",
             elements = 100;
             gridElement.classList.add("difficolta1");
         }
-        
+
 
         //array mine
         const mine = genArrayRandomNum(1, elements, 16)
+        console.log(mine);
+
+        //inizzializzo il punteggio a 0
+        let punteggio = 0;
 
         for (let i = 1; i <= elements; i++) {
 
@@ -60,11 +64,13 @@ buttonPlay.addEventListener("click",
                     if (mine.includes(i)) {
                         // cambia il colore dell'elemento a rosso
                         newElement.style.backgroundColor = "red";
+                        
+                        //comunicazione punteggio
+                        document.getElementById("punteggio").innerHTML = "Hai perso! Il tuo punteggio è di: " + punteggio;
 
                     } else {
-                        // mostro il numero della casella cliccata
-                        newElement.innerHTML = i;
-
+                        // incremento il punteggio se continuo a cliccare
+                        punteggio++
                     }
 
                     //click del numero

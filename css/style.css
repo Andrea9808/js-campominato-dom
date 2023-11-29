@@ -70,6 +70,11 @@ main{
     background-color: rgb(110, 110, 220);
 }
 
+#punteggio{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+}
 
 
 /* FOOTER */
