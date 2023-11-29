@@ -1,10 +1,13 @@
 
 //selezioniamo elemento contenitore
 const gridElement = document.getElementById("grid");
+
 //dichiaro bottone
 const buttonPlay = document.getElementById("buttonplay");
+
 //dichiaro il select
 const selectDifficolta = document.getElementById("hard");
+
 // dichiaro una variabile per il termine del gioco 
 let giocoFinito = false;
 
@@ -45,6 +48,22 @@ buttonPlay.addEventListener("click",
         const mine = genArrayRandomNum(1, elements, 16)
         console.log(mine);
 
+        // funzione per mostrare tutte le bombe alla fine del gioco
+        function mostraBombe() {
+
+            //seleziono tutte le classi .bomba
+            const bombe = document.querySelectorAll(".bomba");
+            
+            //for each preso da fonti esterne: consente di eseguire una funzione per ogni elemento presente nell'array
+            bombe.forEach(function(bomba){
+
+                //aggiungo la classe esplosa ad ogni elemento
+                bomba.classList.add("esplosa");
+
+            }
+            );
+        }
+
         //inizzializzo il punteggio a 0
         let punteggio = 0;
 
@@ -53,6 +72,10 @@ buttonPlay.addEventListener("click",
             const newElement = createMyElement("div", "square", i);
             gridElement.append(newElement);
 
+            if (mine.includes(i)) {
+                // aggiunge la classe distintiva per indicare che questa cella contiene una bomba
+                newElement.classList.add("bomba");
+            }
 
             newElement.addEventListener("click",
 
@@ -74,6 +97,9 @@ buttonPlay.addEventListener("click",
 
                             //rimuovo la classe clicked al termine della partita
                             newElement.classList.remove("clicked");
+
+                            //mostra bombe
+                            mostraBombe();
 
                             //impostazione di fine gioco
                             giocoFinito = true;
@@ -108,7 +134,6 @@ function createMyElement(tagtype, classname, content) {
     return currentElement;
 
 }
-
 
 
 //funzione che crea un array con ordinamento randomico di numeri in un range (min,max)
