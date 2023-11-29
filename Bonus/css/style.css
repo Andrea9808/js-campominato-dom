@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* HEADER */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+    align-items: center;
+    height: 100px;
+}
+
+.navbar img {
+    max-height: 80px; 
+}
+
+#title{
+    display: flex;
+    align-items: center;
+}
+
+
+/* MAIN */
+main{
+    background-color: #34e2bd;
+    height: calc(100% - 50px);
+}
+
+
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 624px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+
+.difficolta1 .square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    cursor: pointer;
+    width: calc(100%/10);
+    height: 50px;
+}
+
+.difficolta2 .square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    cursor: pointer;
+    width: calc(100% / 9);
+    height: 50px;
+}
+
+.difficolta3 .square {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    cursor: pointer;
+    width: calc(100% / 7);
+    height: 50px;
+}
+
+
+.clicked{
+    background-color: rgb(110, 110, 220);
+}
+
+#punteggio{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+
+/* FOOTER */
+footer{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0 30px;
+}
